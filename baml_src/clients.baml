@@ -13,30 +13,14 @@ client<llm> GeminiPro {
   }
 }
 
-client<llm> CustomSonnet {
-  provider anthropic
-  options {
-    model "claude-3-5-sonnet-20241022"
-  }
-}
-
-
-client<llm> CustomHaiku {
-  provider anthropic
-  retry_policy Constant
-  options {
-    model "claude-3-haiku-20240307"
-  }
-}
-
 // https://docs.boundaryml.com/docs/snippets/clients/round-robin
-client<llm> CustomFast {
-  provider round-robin
-  options {
-    // This will alternate between the two clients
-    strategy [GeminiFlash, CustomHaiku]
-  }
-}
+// client<llm> CustomFast {
+//   provider round-robin
+//   options {
+//     // This will alternate between clients
+//     strategy [GeminiFlash]
+//   }
+// }
 
 // https://docs.boundaryml.com/docs/snippets/clients/fallback
 client<llm> GeminiFallback {

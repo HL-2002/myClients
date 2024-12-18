@@ -35,6 +35,54 @@ export function all_succeeded<CheckName extends string>(checks: Record<CheckName
 export function get_checks<CheckName extends string>(checks: Record<CheckName, Check>): Check[] {
     return Object.values(checks)
 }
+export interface CarPolicy {
+  emission_date: string
+  valid_through: string
+  client: string
+  id: string
+  insured: string
+  age: number
+  policy_id: string
+  branch: string
+  company: string
+  producer?: string | null
+  intermediary: string
+  renewal: boolean
+  coverage: number
+  premium: number
+  payment_method?: string | null
+  initial_installment?: number | null
+  installments?: number | null
+  installment_amount?: number | null
+  last_payment?: string | null
+  receipt: string
+  
+}
+
+export interface HealthPolicy {
+  emission_date: string
+  valid_through: string
+  client: string
+  id: string
+  insured: string
+  age: number
+  policy_id: string
+  branch: string
+  company: string
+  producer?: string | null
+  intermediary: string
+  renewal: boolean
+  coverage: number
+  premium: number
+  payment_method?: string | null
+  initial_installment?: number | null
+  installments?: number | null
+  installment_amount?: number | null
+  last_payment?: string | null
+  receipt: string
+  
+}
+
 export interface Resume {
   name: string
   email: string
